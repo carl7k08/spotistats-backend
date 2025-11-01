@@ -55,10 +55,51 @@ app.get("/recently-played", async (req, res) => {
 });
 
 app.put("/play", async (req, res) => {
+
   if (!useToken(req, res)) return;
+
   await spotifyApi.play(req.body);
+
   res.sendStatus(204);
+
 });
 
+
+
+app.get("/search-track", async (req, res) => {
+
+  if (!useToken(req, res)) return;
+
+  const { trackName, artistName } = req.query;
+
+  try {
+
+    const { body } = await spotifyApi.searchTracks(`track:${trackName} artist:${artistName}`, { limit: 1 });
+
+    const imageUrl = body.tracks.items[0]?.album.images[1]?.url;
+
+    if (imageUrl) {
+
+      res.json({ imageUrl });
+
+    } else {
+
+      res.status(404).json({ error: "Album art not found" });
+
+    }
+
+  } catch (e) {
+
+    console.error("❌ /search-track", e);
+
+    res.status(500).send("Search failed");
+
+  }
+
+});
+
+
+
 const PORT = process.env.PORT || 8888;
+
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
