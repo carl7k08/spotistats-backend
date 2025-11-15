@@ -29,7 +29,9 @@ app.get("/callback", async (req, res) => {
     const accessToken = body.access_token;
     const refreshToken = body.refresh_token;
     
-    res.redirect(\https://carl7k08.github.io/spotistats-preview/stats.html#...`);`
+    res.redirect(
+      `https://carl7k08.github.io/spotistats-preview/stats.html#access_token=${accessToken}&refresh_token=${refreshToken}`
+    );
   } catch (e) {
     console.error("❌ /callback", e);
     res.status(500).send("Auth failed");
