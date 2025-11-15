@@ -10,7 +10,7 @@
   let currentIndex = 0;
   const ITEMS_PER_PAGE = 50;
 
-  const API_URL = "http://127.0.0.1:8888";
+  const API_URL = "https://spotistats-backend.onrender.com";
 
   const updateFileList = (files) => {
     fileListEl.textContent = !files || !files.length ? 'Not selected file' : `${files.length} file${files.length > 1 ? 's' : ''}`;
