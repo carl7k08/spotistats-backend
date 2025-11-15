@@ -1,0 +1,28 @@
+{
+  "name": "spotistats-backend",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carl7k08/spotistats-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carl7k08/spotistats-backend/issues"
+  },
+  "homepage": "https://github.com/carl7k08/spotistats-backend#readme"
+}

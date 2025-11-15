@@ -1,0 +1,10 @@
+# Node.js
+spotistats-backend/node_modules/
+spotistats-backend/.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
