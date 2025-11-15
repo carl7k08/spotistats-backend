@@ -16,8 +16,7 @@ const spotifyApi = new SpotifyWebApi({
 app.get("/login", (_req, res) => {
   const scopes = [
     "user-top-read",
-    "user-read-recently-played",
-    "offline_access"
+    "user-read-recently-played"
 ];
   res.redirect(spotifyApi.createAuthorizeURL(scopes));
 });
